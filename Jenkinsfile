@@ -69,7 +69,7 @@ pipeline {
                 bat 'curl -f http://localhost:%PROD_PORT%/health'
                 bat 'curl -f http://localhost:%PROD_PORT%/metrics'
                 bat 'docker rm -f %PROM_CONTAINER% 2>NUL || exit /b 0'
-                bat 'docker run -d --name %PROM_CONTAINER% -p 9090:9090 -v "%WORKSPACE%\prometheus.yml:/etc/prometheus/prometheus.yml" prom/prometheus:latest'
+                bat 'docker run -d --name %PROM_CONTAINER% -p 9090:9090 -v "%WORKSPACE%/prometheus.yml:/etc/prometheus/prometheus.yml" prom/prometheus:latest'
                 bat 'powershell -Command "Start-Sleep -Seconds 8"'
                 bat 'curl -f http://localhost:9090/-/ready'
                 echo 'Monitoring available at http://localhost:9090 and app health at http://localhost:3001/health'
