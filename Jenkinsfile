@@ -82,7 +82,7 @@ pipeline {
             echo 'Pipeline finished. Useful commands: docker ps, docker logs skillpath-ai-prod'
         }
         success {
-            echo 'SkillPath AI pipeline completed successfully through all 7 HD stages.'
+            echo 'SkillPath AI pipeline completed successfully through all 7 stages.'
         }
         failure {
             echo 'Pipeline failed. Check the failed stage console output and fix before recording the final demo.'
